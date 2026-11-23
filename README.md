@@ -70,21 +70,4 @@ gcc taha_menu_files/main.c -o taha
 On Windows, run the programs as `ali.exe` and `taha.exe`.
 
 **Ahmad's module (searching and matching):**
-`search.c` has no `main()` and includes a shared header, `studenthelp.h`, which has not been written yet. It cannot be compiled on its own until the modules are integrated.
-
-## Program Flow
-
-Start → Load records from `students.txt` (if present) → Display Menu → Register / Update / Search / Match / List → Save to File → Exit
-
-## Text-File Format
-
-`students.txt` stores one student per line:
-
-```
-id|name|teachCount|teach1,teach2|needCount|need1,need2
-```
-
-Example:
-
-```
-26K-0001|Taha
+`search.c` has no `main()` and includes a shared header,
