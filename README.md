@@ -43,8 +43,12 @@ StudentHelp/
 │   └── profiles_main.c      (registration, update, removal, display)
 ├── raza_matching/
 │   └── search.c             (searching, matching, mutual partners)
-└── taha_menu_files/
-    └── main.c               (menu, file handling, validation, reports)
+├── taha_menu_files/
+│   └── main.c               (menu, file handling, validation, reports)
+└── screenshots/
+    ├── test1.png
+    ├── test2.png
+    └── test4.png
 ```
 
 ## Requirements
@@ -99,11 +103,15 @@ Example:
 - **Input:** Run `./taha`, choose `1`, then `0`
 - **Expected:** Prints "Using sample students. Could not open students.txt." and "Loaded 2 student record.", then lists Taha Mayet and Ahmed Kazmi with their subjects.
 
+![Test 1 output](screenshots/test1.png)
+
 ### Test 2: Subject report is case-insensitive (Taha's module)
 
 - **Setup:** Same as Test 1
-- **Input:** Choose `2`, enter `CALCULUS`, then `0`
-- **Expected:** Total students: 2, Can teach CALCULUS: 1, Needs help with CALCULUS: 1.
+- **Input:** Choose `2`, enter `calculus` (lowercase, while the stored subject is "Calculus"), then `0`
+- **Expected:** Total students: 2, Can teach calculus: 1, Needs help with calculus: 1.
+
+![Test 2 output](screenshots/test2.png)
 
 ### Test 3: Bad record is rejected (Taha's module)
 
@@ -112,7 +120,9 @@ Example:
 - **Input:** Run `./taha`
 - **Expected:** Prints "Invalid record or too many students at line 1." and exits without showing the menu.
 
+**Screenshot pending**
+
 ### Test 4: Duplicate ID is rejected (Ali's module)
 
 - **Input:** Choose `1`, enter ID `101`, name `Ali`, `0` teach subjects, `0` needed subjects. Choose `1` again and enter ID `101`.
-- **Expected:** First time prints "Student registered successfully!". Second time prints "ID already exists!" and no second profile is added.
+- **Expected:** First time prints
