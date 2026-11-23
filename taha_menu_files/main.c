@@ -284,54 +284,6 @@ void printSubjects(FILE *fp, char subjects[][SUB_LEN], int count)
     }
 }
 
-int save(int count, char name[][NAME_LENGTH], char id[][15],
-         char subs[][MAX_SUB][SUB_LEN], int subcount[],
-         char learn[][MAX_SUB][SUB_LEN], int learncount[])
-{
-    char tempFile[] = "students.tmp";
-    char fileName[] = "students.txt";
-
-    FILE *fp = fopen(tempFile, "w");
-
-    if (fp == NULL) {
-        puts("Could not save students.txt.");
-        return 0;
-    }
-
-    for (int i = 0; i < count; i++) {
-
-        fprintf(fp, "%s|%s|%d|",
-                id[i], name[i], subcount[i]);
-
-        printSubjects(fp, subs[i], subcount[i]);
-
-        fprintf(fp, "|%d|", learncount[i]);
-
-        printSubjects(fp, learn[i], learncount[i]);
-
-        fputc('\n', fp);
-    }
-
-    int error = ferror(fp);
-
-    if (fclose(fp) != 0)
-        error = 1;
-
-    if (error || rename(tempFile, fileName) != 0) {
-
-        remove(tempFile);
-
-        puts("Could not save students.txt.");
-
-        return 0;
-    }
-
-    printf("Saved %d student record(s) to %s.\n",
-           count, fileName);
-
-    return 1;
-}
-
 void Liststudents(int count, char name[][NAME_LENGTH],
                   char id[][15], char subs[][MAX_SUB][SUB_LEN],
                   int subcount[], char learn[][MAX_SUB][SUB_LEN],
@@ -439,7 +391,6 @@ int main(void)
 
         printf("1. List all students\n");
         printf("2. Subject report\n");
-        printf("3. Save students\n");
         printf("0. Exit\n");
 
         printf("Choose an option: ");
@@ -450,7 +401,7 @@ int main(void)
             running = 0;
         }
         else if (result < 0 || strlen(choice) != 1) {
-            printf("Invalid choice. Enter 0, 1, 2, or 3.\n");
+            printf("Invalid choice. Enter 0, 1, or 2.\n");
         }
         else if (choice[0] == '1') {
 
@@ -462,16 +413,11 @@ int main(void)
             showSubjectReport(count, subs, subcount,
                               learn, learncount);
         }
-        else if (choice[0] == '3') {
-
-            save(count, name, id, subs, subcount,
-                 learn, learncount);
-        }
         else if (choice[0] == '0') {
             running = 0;
         }
         else {
-            printf("Invalid choice. Enter 0, 1, 2, or 3.\n");
+            printf("Invalid choice. Enter 0, 1, or 2.\n");
         }
     }
 
