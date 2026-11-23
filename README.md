@@ -12,7 +12,7 @@
 |---|---|---|
 | Muhammad Ali | 26K-0548 | Student registration, profile creation, update and removal, display of all profiles |
 | Ahmad Raza | 26K-0609 | Subject searching, peer-matching algorithm, mutual study partners |
-| Taha Hamza | 26K-0566 | Main menu, text-file loading and saving, input validation, profile listing, subject report |
+| Taha Hamza | 26K-0566 | Main menu, text-file and loading, input validation, profile listing, subject report |
 
 ## About the Project
 
