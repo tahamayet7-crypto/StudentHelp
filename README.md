@@ -125,4 +125,6 @@ Example:
 ### Test 4: Duplicate ID is rejected (Ali's module)
 
 - **Input:** Choose `1`, enter ID `101`, name `Ali`, `0` teach subjects, `0` needed subjects. Choose `1` again and enter ID `101`.
-- **Expected:** First time prints
+- **Expected:** First time prints "Student registered successfully!". Second time prints "ID already exists!" and no second profile is added.
+
+![Test 4 output](screenshots/test4.png)
