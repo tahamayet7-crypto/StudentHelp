@@ -7,7 +7,7 @@
 #define max_name 50
 #define max_sub_len 30
 
-// Muhammad Ali's part  26K-0548
+// Muhammad Ali's part ( 26K-0548 )
 typedef struct {
     int id;
     char name[max_name];
@@ -179,7 +179,7 @@ void save_students(){
 }
 
 
-// Ahmad Raza's part  26K-0609
+// Ahmad Raza's part ( 26K-0609 )
 int is_same(const char a[], const char b[]){
     int i = 0;
     while (a[i] != '\0' && b[i] != '\0') {
@@ -302,7 +302,7 @@ void show_partners(Student list[], int count){
         printf("  No mutual study partners found.\n");
 }
 
-// Taha Hamza's part  26K-0566
+// Taha Hamza's part ( 26K-0566  )
 void load_students(){
     FILE *fp = fopen("Students.txt", "r");
     if (fp == NULL)
