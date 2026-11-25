@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
+  
 #define max_std 100
 #define max_sub 5
 #define max_name 50
